@@ -1,3 +1,8 @@
+# Custom
+/test_results.txt
+/visualization
+/debug_viz
+
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,macos,pycharm,git,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode,macos,pycharm,git,linux
 
