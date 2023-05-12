@@ -21,8 +21,8 @@ defaults:
   - relationship: place # {place, grasp}
   - model: release
   - task: ${object_class}_${relationship}
-  - optional mode: train # $mode \in {train, train_val, validation}
   - checkpoints: ndf/${object_class}/${pose_dist}/${model}/${relationship}
+mode: train # $mode \in {train, train_val, validation}
 
 ### TO BE CHANGED ###
 
