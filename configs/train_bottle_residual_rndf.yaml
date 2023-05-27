@@ -16,7 +16,7 @@ image_logging_period: 100
 log_txt_file:  ${hydra:runtime.cwd}/recent_training_paths.txt # absolute path for text file for logging
 defaults:
   - _self_
-  - object_class: mug # {mug, bottle, bowl}
+  - object_class: bottle # {mug, bottle, bowl}
   - pose_dist: upright # {upright, arbitrary}
   - relationship: place # {place, grasp}
   - model: release
@@ -35,7 +35,7 @@ batch_size: 8
 num_points: 1024
 num_demo: 10
 dataset_index: None
-object_type: mug
+object_type: bottle
 dataset_size: 1000
 rotation_variance: 180
 translation_variance: 0.5

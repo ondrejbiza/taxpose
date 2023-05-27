@@ -1,0 +1,45 @@
+#description: UNNAMED
+
+resources:
+  agent_label: ''
+  resource_pool: gpu-2080ti
+  slots: 1
+  weight: 1
+  devices: null
+  shm_size: 257698037760  # 240GB
+
+
+bind_mounts:
+  - host_path: /mnt/yanjing-nfs-hdd/
+    container_path: /run/determined/workdir/yanjing-nfs-hdd/
+    read_only: false
+  - host_path: /mnt/yanjing-nfs-hdd/
+    container_path: /root/yanjing-nfs-hdd/
+    read_only: false
+    propagation: rshared  # ?
+  - host_path: /mnt/yanjing-nfs-hdd/
+    container_path: /mnt/yanjing-nfs-hdd/
+    read_only: false
+
+
+debug: false
+
+environment:
+  add_capabilities: null
+  drop_capabilities: null
+  environment_variables: { }
+  force_pull_image: false
+  image:
+    cpu: >-
+      determinedai/environments:py-3.8-pytorch-1.9-lightning-1.5-tf-2.4-cpu-5158dec
+    cuda: >-
+      ondrejba/taxpose_rndf:v2
+    rocm: >-
+      determinedai/environments:rocm-4.2-pytorch-1.9-tf-2.5-rocm-5158dec
+  pod_spec: null
+  ports: null
+
+#entrypoint: null
+#work_dir: null
+#idle_timeout: null
+#notebook_idle_type: kernels_or_terminals
