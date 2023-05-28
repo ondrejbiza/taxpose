@@ -39,7 +39,7 @@ object_type: bowl
 dataset_size: 1000
 rotation_variance: 180
 translation_variance: 0.5
-synthetic_occlusion: True
+synthetic_occlusion: False
 plane_occlusion: True
 plane_standoff: 0.04
 ball_occlusion: True

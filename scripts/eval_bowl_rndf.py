@@ -176,7 +176,7 @@ def create_target_desc_subdir(demo_path, parent_model_path, child_model_path):
 
 def main(args):
 
-    hydra.initialize(config_path="../configs", job_name="eval_rndf")
+    hydra.initialize(config_path="../configs", job_name="eval_bowl_rndf")
     # TODO: Make sure I set different tasks etc.
     if args.child_load_pose_type == "random_upright":
         pose_dist = "upright"
@@ -184,7 +184,7 @@ def main(args):
         pose_dist = "arbitrary"
 
     hydra_cfg = hydra.compose(
-        config_name="eval_full_mug_place",
+        config_name="eval_full_bowl_place",
         overrides=["pose_dist={:s}".format(pose_dist)],
         return_hydra_config=True
     )
@@ -1099,6 +1099,8 @@ def main(args):
         mc_vis['scene/final_child_pcd'].delete()
         pause_mc_thread(False)
 
+
+# python -m scripts.eval_rndf --parent_class syn_rack_easy --child_class mug --exp mug_on_rack_upright_pose_new --parent_model_path ndf_vnn/rndf_weights/ndf_rack.pth --child_model_path ndf_vnn/rndf_weights/ndf_mug2.pth --is_child_shapenet_obj --rel_demo_exp release_demos/mug_on_rack_relation --pybullet_server --opt_iterations 650 --num_iterations 100 --new_descriptors --parent_load_pose_type random_upright --child_load_pose_type any_pose --pybullet_viz
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
